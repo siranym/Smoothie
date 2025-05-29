@@ -28,4 +28,5 @@ if submitted:
     st.success('Someone clicked the button', icon = '👍')
 import requests
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response)
+st.text(smoothiefroot_response.json())
+sf_df = st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
