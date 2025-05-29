@@ -3,18 +3,6 @@ import streamlit as st
 from snowflake.snowpark.functions import col
 import requests
 import pandas as pd
-import streamlit as st
-import pandas as pd
-
-# Get connection
-conn = st.connection("snowflake", type="snowflake")
-
-# Run query
-df = conn.query("SELECT CURRENT_VERSION()", ttl=600)
-
-# Display result
-st.dataframe(df)
-
 
 # Write directly to the app
 st.title(":cup_with_straw: Customize Your Smoothie! :cup_with_straw:")
