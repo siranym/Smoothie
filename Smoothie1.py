@@ -11,6 +11,10 @@ st.write(
     """
 )
 
+name_on_order = st.text_input('Name on Smothie: ')
+st.write('The name on your Smoothie will be: ', name_on_order)
+
+
 try:
     # Establish connection to Snowflake (assuming st.connection is correctly defined)
     cnx = st.connection("snowflake")
