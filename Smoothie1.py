@@ -28,10 +28,8 @@ try:
         ingredients_string = ' '.join(ingredients_list)  # Join selected ingredients into a single string
         for fruit_chosen in ingredients_list:
             try:
-            import requests
-            smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-            st.text(smoothiefroot_response.json())
-
+                smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+                st.text(smoothiefroot_response.json())
                 # Make API request to get details about each fruit
                 fruityvice_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
                 fruityvice_response.raise_for_status()  # Raise an error for bad responses (4xx or 5xx)
