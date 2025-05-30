@@ -31,7 +31,7 @@ try:
                 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
                 sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
                 # Make API request to get details about each fruit
-                fruityvice_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
+                fruityvice_response = requests.get("https://my.smoothiefroot.com/api/fruit/Apples")
                 fruityvice_response.raise_for_status()  # Raise an error for bad responses (4xx or 5xx)
                 
                 if fruityvice_response.status_code == 200:
