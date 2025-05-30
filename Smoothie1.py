@@ -10,12 +10,6 @@ st.write(
     Choose the fruits you want in your custom Smoothie!
     """
 )
-import requests
-smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response)
-# User input for name on order
-name_on_order = st.text_input("Name on Smoothie")
-st.write("The name on your smoothie will be: ", name_on_order)
 
 try:
     # Establish connection to Snowflake (assuming st.connection is correctly defined)
@@ -28,13 +22,14 @@ try:
     # Multi-select for choosing ingredients
     ingredients_list = st.multiselect('Choose up to 5 ingredients:', my_dataframe, max_selections=5)
 
+ 
     # Process ingredients selection
     if ingredients_list:
         ingredients_string = ' '.join(ingredients_list)  # Join selected ingredients into a single string
         for fruit_chosen in ingredients_list:
             try:
                 # Make API request to get details about each fruit
-                fruityvice_response = requests.get("https://smoothiefroot.com/api/fruit/" + fruit_chosen)
+                fruityvice_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
                 fruityvice_response.raise_for_status()  # Raise an error for bad responses (4xx or 5xx)
                 
                 if fruityvice_response.status_code == 200:
