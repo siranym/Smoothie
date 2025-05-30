@@ -29,7 +29,7 @@ try:
         for fruit_chosen in ingredients_list:
             try:
                 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-                st.text(smoothiefroot_response.json())
+                st.text(smoothiefroot_response.json(), use_container_width=true)
                 # Make API request to get details about each fruit
                 fruityvice_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
                 fruityvice_response.raise_for_status()  # Raise an error for bad responses (4xx or 5xx)
